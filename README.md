@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Rick Roll Tabs Chrome Extension
+![ScreenShot]([https://github.com/aziza810/encoder/blob/main/screenshots/Снимок%20экрана%202023-11-02%20в%2020.53.27.png](https://github.com/aziza810/extension/blob/main/Снимок%20экрана%202023-12-13%20в%2018.21.30.png))
+Это Chrome-расширение, которое изменяет заголовок вкладки на случайную строку из песни "Never Gonna Give You Up" и устанавливает изображение рикролла в качестве фона страницы при загрузке.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Использование
 
-## Available Scripts
+### Установка
 
-In the project directory, you can run:
+1. Клонируйте репозиторий или скачайте файлы расширения.
+2. Откройте браузер Chrome и перейдите на страницу `chrome://extensions/`.
+3. Включите "Режим разработчика" (Developer Mode).
+4. Нажмите на кнопку "Загрузить распакованное расширение" и выберите папку с файлами расширения.
 
-### `npm start`
+### Структура файлов
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `manifest.json` - файл манифеста, описывающий расширение.
+- `background.js` - фоновый скрипт, отвечающий за изменение заголовка вкладки.
+- `contentScript.js` - скрипт контента, выполняющий изменения на странице.
+- `popup.html` - всплывающее окно (popup) для расширения.
+- `images/` - папка с изображениями для иконок расширения.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Video:https://drive.google.com/file/d/1L-CZYrP7jH9AO_eDLH8nlHr1c0_7PpEU/view?usp=sharing
 
-### `npm test`
+### Редактирование функциональности
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. В `background.js` и `contentScript.js` вы можете изменить текст песни, добавив или удалив строки из переменной `lyrics`.
+2. Чтобы использовать изображение рикролла вместо цвета, в `contentScript.js` измените функцию `setBackgroundImage()` на приведенную ниже.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+// Установка изображения в качестве фона
+function setBackgroundImage() {
+  const imageUrl = 'https://cdn.vox-cdn.com/thumbor/WR9hE8wvdM4hfHysXitls9_bCZI=/0x0:1192x795/1400x1400/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg';
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+}
