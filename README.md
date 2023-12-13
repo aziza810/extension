@@ -1,5 +1,6 @@
 # Rick Roll Tabs Chrome Extension
-![ScreenShot]([https://github.com/aziza810/encoder/blob/main/screenshots/Снимок%20экрана%202023-11-02%20в%2020.53.27.png](https://github.com/aziza810/extension/blob/main/Снимок%20экрана%202023-12-13%20в%2018.21.30.png))
+
+![ScreenShot]([https://github.com/aziza810/extension/blob/main/Снимок%20экрана%202023-12-13%20в%2018.21.30.png]())
 Это Chrome-расширение, которое изменяет заголовок вкладки на случайную строку из песни "Never Gonna Give You Up" и устанавливает изображение рикролла в качестве фона страницы при загрузке.
 
 ## Использование
@@ -19,7 +20,7 @@
 - `popup.html` - всплывающее окно (popup) для расширения.
 - `images/` - папка с изображениями для иконок расширения.
 
-### Video:https://drive.google.com/file/d/1L-CZYrP7jH9AO_eDLH8nlHr1c0_7PpEU/view?usp=sharing
+### Video:https:[Watch the video](https://drive.google.com/file/d/1L-CZYrP7jH9AO_eDLH8nlHr1c0_7PpEU/view?usp=sharing)
 
 ### Редактирование функциональности
 
